@@ -5,15 +5,15 @@
 #from modulos.ventas import ventas
 
 # ---------------- SESIÓN ----------------
-#if "login" not in st.session_state:
+if "login" not in st.session_state:
    # st.session_state["login"] = False
 
 # ---------------- LOGIN ----------------
-#if not st.session_state["login"]:
+if not st.session_state["login"]:
  #   login()
 
 # ---------------- SISTEMA ----------------
-# else:
+else:
 
     st.sidebar.title("📋 Menú")
 
