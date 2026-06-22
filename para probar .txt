@@ -1,2 +1,0 @@
-cd C:\TareaStreamlit
-py -m streamlit run app.py
