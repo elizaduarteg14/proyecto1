@@ -10,7 +10,8 @@ def productos():
 
     nombre = st.text_input("Nombre del producto")
     precio = st.number_input("Precio", min_value=0.0, format="%.2f")
-
+    stock = st.number_input("Stock", min_value=0)
+    
     if st.button("Guardar producto"):
 
         if nombre and precio:
@@ -19,9 +20,9 @@ def productos():
             cursor = conn.cursor()
 
             cursor.execute(
-                "INSERT INTO productos(nombre, precio) VALUES (%s, %s)",
-                (nombre, precio)
-            )
+    "INSERT INTO productos(nombre, precio, stock) VALUES (%s, %s, %s)",
+    (nombre, precio, stock)
+)
 
             conn.commit()
             conn.close()
