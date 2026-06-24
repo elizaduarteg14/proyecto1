@@ -8,22 +8,10 @@ def ventas():
     # ---------------- INSERTAR ----------------
     st.subheader("Registrar venta")
 
-# Obtener clientes
-conn = conectar()
-cursor = conn.cursor()
+    cliente = st.text_input("Cliente")
+    producto = st.text_input("Producto")
+    cantidad = st.number_input("Cantidad", min_value=1)
 
-cursor.execute("SELECT nombre FROM clientes")
-clientes = [c[0] for c in cursor.fetchall()]
-
-# Obtener productos
-cursor.execute("SELECT nombre FROM productos")
-productos = [p[0] for p in cursor.fetchall()]
-
-conn.close()
-
-cliente = st.selectbox("Cliente", clientes)
-producto = st.selectbox("Producto", productos)
-cantidad = st.number_input("Cantidad", min_value=1)
 
     if st.button("Guardar venta"):
 
